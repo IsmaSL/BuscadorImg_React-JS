@@ -1,12 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Buscador from './Components/Buscador';
 import Error from './Components/Error'
 
 function App() {
 
   // State Principal
-  const [termino, guardarTermino] = useState('');
+  const [termino, guardarTermino] = useState ('');
   const [error, guardarError] = useState (false);
+  const [resultado, guardarResultado] = useState ({});
+
+  useEffect(() => {
+    // prevenir ejecucución
+    if (termino==='') return;
+      // Consultar API
+      // ----> Meter este método sobrecarga useEffect pero
+      //       en la documentación los ejemplos son así
+      const consultarAPi = async () => {
+        const url = `https://pixabay.com/api/?key=1732750-d45b5378879d1e877cd1d35a6&q=${termino}`;
+        // Consultar URL
+        const respuesta = await fetch(url);
+        const resultado = await respuesta.json();
+        guardarResultado(resultado);
+      }
+
+    consultarAPi();
+  }, [ termino ]);
 
   const datosConsulta = datos => {
     // Validar campo de búsqueda
@@ -14,7 +32,6 @@ function App() {
       guardarError(true);
       return;
     } 
-
     // Termino existe, agregarlo al State
     guardarTermino(datos.termino);
     guardarError(false);
