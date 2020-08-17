@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Buscador from './Components/Buscador';
 import Error from './Components/Error'
+import Resultado from './Components/Resultado'
 
 function App() {
 
@@ -57,6 +58,10 @@ function App() {
         />
 
         {componente }
+
+        <Resultado 
+        
+        />
 
       </div>
     </div>
