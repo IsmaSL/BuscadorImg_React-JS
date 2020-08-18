@@ -9,6 +9,7 @@ function App() {
   const [termino, guardarTermino] = useState ('');
   const [error, guardarError] = useState (false);
   const [resultado, guardarResultado] = useState ({});
+  const [imagenes, guardarImagenes] = useState ([]);
 
   useEffect(() => {
     // prevenir ejecucución
@@ -22,6 +23,7 @@ function App() {
         const respuesta = await fetch(url);
         const resultado = await respuesta.json();
         guardarResultado(resultado);
+        guardarImagenes(resultado.hits);
       }
 
     consultarAPi();
@@ -59,11 +61,12 @@ function App() {
 
         {componente }
 
-        <Resultado 
-        
-        />
-
       </div>
+
+      <Resultado 
+        imagenes = { imagenes }
+      />
+
     </div>
   );
 }
