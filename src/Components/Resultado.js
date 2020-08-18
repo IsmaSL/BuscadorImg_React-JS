@@ -12,6 +12,7 @@ function Resultado({imagenes}) {
                     { 
                         imagenes.map(imagen => (
                             <Imagen 
+                                key = { imagen.id }
                                 imagen = { imagen }
                             />
                         ) ) 
@@ -24,8 +25,7 @@ function Resultado({imagenes}) {
 
     return(
         <div className="py-4 px-5 text-center">
-            <h2>Resultado de la búsqueda</h2>
-            <p>Hola desde Componente Resultado</p>
+            <h2>Resultados de la búsqueda</h2>
 
             { mostrarImagenes() }
         </div>  
