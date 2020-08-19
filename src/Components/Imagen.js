@@ -1,9 +1,11 @@
 import React from 'react';
-
+// Imagen recibe información de Resultado
 const Imagen = (props) => {
-
+    // Se crea una variable constante para no repetir código.
+    // Lo que se hace es extraer los datos del arreglo de cada
+    // imagen proveniente del props.imagen
     const { largeImageURL, likes, previewURL, tags, views} = props.imagen;
-
+    // Lo que se va a visualizar
     return(
         <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
             <div className="card">
@@ -16,6 +18,7 @@ const Imagen = (props) => {
             </div>
         </div>
     )
+    // Solo se agregan los elementos a usar entre llaves
 }
 
 export default Imagen;

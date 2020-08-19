@@ -1,6 +1,7 @@
 import React from 'react';
-
+// Es una función donde recibe el mensaje de Resultado
 function Error({mensaje}) {
+    // Lo que se va a visualizar
     return(
         <div className="row">
             <div className="col-md-12">
