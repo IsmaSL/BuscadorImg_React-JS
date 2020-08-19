@@ -4,39 +4,61 @@ import Error from './Components/Error'
 import Resultado from './Components/Resultado'
 
 function App() {
-
   // State Principal
   const [termino, guardarTermino] = useState ('');
   const [error, guardarError] = useState (false);
   const [resultado, guardarResultado] = useState ({});
   const [imagenes, guardarImagenes] = useState ([]);
   const [pagina, guardarPagina] = useState ('');
+
+  // Volver arriba al cambiar de página
+  const scroll = () => {
+    const elemento = document.querySelector('.jumbotron');
+    elemento.scrollIntoView('smooth', 'start');
+  }
   // Paginación
   const pagAnterior = () => {
-    console.log('Anterior...');
+    // Leer state actual
+    let pag = pagina;
+    // Validar si es la pagina 1 para no retroceder
+    if (pagina===1) return null;
+    // Restar 1 a la pag actual
+    pag--;
+    // Agregar cambio state
+    guardarPagina(pag);
+    scroll();
   }
 
   const pagSiguiente = () => {
-    console.log('Siguiente...');
+    // Leer state actual
+    let pag = pagina;
+    // Sumar 1 a la pag actual
+    pag++;
+    // Agregar cambio state
+    guardarPagina(pag);
+    scroll();
   }
 
   useEffect(() => {
     // prevenir ejecucución
     if (termino==='') return;
-      // Consultar API
-      // ----> Meter este método sobrecarga useEffect pero
-      //       en la documentación los ejemplos son así
-      const consultarAPi = async () => {
-        const url = `https://pixabay.com/api/?key=1732750-d45b5378879d1e877cd1d35a6&q=${termino}`;
-        // Consultar URL
-        const respuesta = await fetch(url);
-        const resultado = await respuesta.json();
-        guardarResultado(resultado);
-        guardarImagenes(resultado.hits);
-      }
+    
+    // Consultar API
+    // ----> Meter este método sobrecarga useEffect pero
+    //       en la documentación los ejemplos son así
+    const consultarAPi = async () => {
+      const key = '1732750-d45b5378879d1e877cd1d35a6';
+      const url = `https://pixabay.com/api/?key=${key}&q=${termino}&per_page=24&page=${pagina}`;
+      // Consultar URL
+      // console.log(url);
+      const respuesta = await fetch(url);
+      const resultado = await respuesta.json();
+      guardarResultado(resultado);
+      guardarImagenes(resultado.hits);
+    }
 
     consultarAPi();
-  }, [ termino ]);
+  }, [ termino, pagina ]);
 
   const datosConsulta = datos => {
     // Validar campo de búsqueda
@@ -46,6 +68,7 @@ function App() {
     } 
     // Termino existe, agregarlo al State
     guardarTermino(datos.termino);
+    guardarPagina('1');
     guardarError(false);
   }
 

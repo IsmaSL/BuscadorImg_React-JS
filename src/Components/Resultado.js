@@ -10,6 +10,7 @@ function Resultado({imagenes, pagAnterior, pagSiguiente}) {
 
         return(
             <React.Fragment>
+                <h2> Resultados de la búsqueda </h2>
                 <div className="row col-12 p-5 m-0">
                     { 
                         imagenes.map(imagen => (
@@ -19,7 +20,6 @@ function Resultado({imagenes, pagAnterior, pagSiguiente}) {
                             />
                         ) ) 
                     }
-                    
                 </div>
                 <Paginacion 
                     pagAnterior = { pagAnterior }
@@ -31,7 +31,6 @@ function Resultado({imagenes, pagAnterior, pagSiguiente}) {
 
     return(
         <div className="py-4 text-center">
-            <h2>Resultados de la búsqueda</h2>
             { mostrarImagenes() }
         </div>  
        
