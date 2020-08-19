@@ -10,6 +10,15 @@ function App() {
   const [error, guardarError] = useState (false);
   const [resultado, guardarResultado] = useState ({});
   const [imagenes, guardarImagenes] = useState ([]);
+  const [pagina, guardarPagina] = useState ('');
+  // Paginación
+  const pagAnterior = () => {
+    console.log('Anterior...');
+  }
+
+  const pagSiguiente = () => {
+    console.log('Siguiente...');
+  }
 
   useEffect(() => {
     // prevenir ejecucución
@@ -62,11 +71,13 @@ function App() {
         {componente }
 
       </div>
-
-      <Resultado 
-        imagenes = { imagenes }
-      />
-
+      <div className="row justify-content-center">
+        <Resultado 
+          imagenes = { imagenes }
+          pagAnterior = { pagAnterior }
+          pagSiguiente = { pagSiguiente }
+        />
+      </div>
     </div>
   );
 }
