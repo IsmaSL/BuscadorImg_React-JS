@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/BuscadorImg_React-JS/static/css/main.4675a583.chunk.css",
+    "main.js": "/BuscadorImg_React-JS/static/js/main.897111a2.chunk.js",
+    "main.js.map": "/BuscadorImg_React-JS/static/js/main.897111a2.chunk.js.map",
+    "runtime-main.js": "/BuscadorImg_React-JS/static/js/runtime-main.845bcdd5.js",
+    "runtime-main.js.map": "/BuscadorImg_React-JS/static/js/runtime-main.845bcdd5.js.map",
+    "static/js/2.434c91cc.chunk.js": "/BuscadorImg_React-JS/static/js/2.434c91cc.chunk.js",
+    "static/js/2.434c91cc.chunk.js.map": "/BuscadorImg_React-JS/static/js/2.434c91cc.chunk.js.map",
+    "index.html": "/BuscadorImg_React-JS/index.html",
+    "precache-manifest.67fe257d46f8dd172f108cd712f9db06.js": "/BuscadorImg_React-JS/precache-manifest.67fe257d46f8dd172f108cd712f9db06.js",
+    "service-worker.js": "/BuscadorImg_React-JS/service-worker.js",
+    "static/css/main.4675a583.chunk.css.map": "/BuscadorImg_React-JS/static/css/main.4675a583.chunk.css.map",
+    "static/js/2.434c91cc.chunk.js.LICENSE.txt": "/BuscadorImg_React-JS/static/js/2.434c91cc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.845bcdd5.js",
+    "static/js/2.434c91cc.chunk.js",
+    "static/css/main.4675a583.chunk.css",
+    "static/js/main.897111a2.chunk.js"
+  ]
+}
