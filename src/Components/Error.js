@@ -4,9 +4,9 @@ function Error({mensaje}) {
     // Lo que se va a visualizar
     return(
         <div className="row">
-            <div className="col-md-12">
-                <div className="alert alert-dimissible alert-danger alert-block text-center"> 
-                    <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+            <div className="col-12 mt-5">
+                <div className="alert alert-dimissible alert-danger p-5 text-center esq2"> 
+                    <button type="button" className="close ml-3" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                     <strong>Ops!</strong> { mensaje }

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Buscador from './Components/Buscador';
 import Error from './Components/Error'
 import Resultado from './Components/Resultado'
+import Menu from './Components/Menu';
+import Pie from './Components/Pie';
 
 function App() {
   // State Principal
@@ -90,6 +92,7 @@ function App() {
     guardarError(false);
   }
   // Cargando un componente condicional (componente Error)
+  // Cargo una previa
   let componente;
   // Validamos el estado del error
   if(error){
@@ -104,22 +107,28 @@ function App() {
                     imagenes = { imagenes }
                     pagAnterior = { pagAnterior }
                     pagSiguiente = { pagSiguiente }
+                    noPagina = { pagina }
                 />
   }
   // Lo que se va a visualizar
   return (
-    <div className="app container p-0">
+    <div className="app container p-0 m-0 col-lg-12">
+      <Menu />
       <div className="jumbotron">
-        <p className="lead text-center">Buscador de Imágenes</p>
+        <h1 className="text-center pb-2">Busca tu imagen
+        
+        </h1>
+        <p className="text-center pb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam maximus nibh convallis tincidunt sodales.</p>
         {/* Se llama al componente Buscador, que manda información al componente App */}
         <Buscador 
           datosConsulta = { datosConsulta }
         />
       </div>
-      <div className="row justify-content-center">
-         {/* Aquí se llama al componente condicional, depende de su resultado */}
+      <div className="row justify-content-center mx-0 pb-4 mb-5">
+        {/* Aquí se llama al componente condicional, depende de su resultado */}
         { componente }
       </div>
+      <Pie />
     </div>
   );
 }

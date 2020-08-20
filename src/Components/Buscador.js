@@ -26,21 +26,21 @@ function Buscador({datosConsulta}){
     // Lo que se va a visualizar
     return ( 
         <form onSubmit = { buscar }>
-            <div className="row">
+            <div className="row px-5 mx-5">
                 <div className="form-group col-md-8">
                     <input 
                         onChange={ handleChange }
                         type="text" 
                         name="termino" 
                         id="termino" 
-                        className="form-control form-control-lg" 
+                        className="form-control form-control-lg esq" 
                         placeholder="Busca tu imágen..." 
                     />
                 </div>
                 <div className="form-group col-md-4">
                     <input 
                         type="submit" 
-                        className="btn btn-success btn-lg btn-block" 
+                        className="btn btn-success btn-lg btn-block esq" 
                         value="Buscar" 
                     />
                 </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import Imagen from './Imagen'
 import Paginacion from './Paginacion';
 // Esta función recibe datos del Componente Padre
-function Resultado({imagenes, pagAnterior, pagSiguiente}) {
+function Resultado({imagenes, pagAnterior, noPagina, pagSiguiente}) {
     // Se crea el método que visualizará todas las imágenes
     const mostrarImagenes = () => {
         // Comprueba el tamaño del arreglo de las imágenes, si es 0
@@ -30,6 +30,7 @@ function Resultado({imagenes, pagAnterior, pagSiguiente}) {
                 {/* Se llama al componente Paginacion y se le envía la función de paginación */}
                 <Paginacion 
                     pagAnterior = { pagAnterior }
+                    noPagina = { noPagina }
                     pagSiguiente = { pagSiguiente }
                 />
             </React.Fragment>
